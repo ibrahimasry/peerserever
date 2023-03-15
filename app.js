@@ -17,7 +17,7 @@ var port = process.env.PORT || "8080";
 
 app.set("port", port);
 
-app.use(cors());
+app.use(cors("*"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/peerjs", ExpressPeerServer(server, options));
 app.use(errorhandler());
